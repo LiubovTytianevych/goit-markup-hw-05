@@ -66,7 +66,9 @@ h1,h2,h3,h4,h5,h6,p {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em; 
-    padding: 32px 0;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative;
 }
 .header-item:not(:last-child) {
     margin-right: 50px;
@@ -78,6 +80,17 @@ h1,h2,h3,h4,h5,h6,p {
 .nav-link:hover,
 .nav-link:focus {
     color:var(--color-primary);
+}
+.current::after {  
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
 }
 .address-list {
     display: flex;
@@ -208,6 +221,30 @@ h1,h2,h3,h4,h5,h6,p {
 }
 .examples-list {
     display: flex;
+}
+.activity {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.activity::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+}
+.activity-text {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 27px 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.143;
+    text-transform: uppercase;
+    color: #FFFFFF;
 }
 .container-team {
     display: flex;
@@ -427,12 +464,43 @@ img {
     flex-wrap: wrap;
     margin-right: -30px;
     margin-bottom: -30px;
+    
 }
 .project-wrapper {
     border: 1px solid #eeeeee;
     border-top: none;
     padding: 20px 24px;
+    
 }
+.portfolio-thumb {
+    position: relative;
+    width: 370px;
+    height: 294px;
+    overflow: hidden;
+}
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(101%);
+    transition: transform 250ms;
+}
+.overlay-text {
+    padding: 60px 24px;
+    align-content: center;
+    font-size: 18px;
+    line-height: 1.56;
+    color:#FFFFFF;
+}
+
+.project-item:hover .portfolio-overlay,
+.project-item:focus .portfolio-overlay {
+    transform: translateY(0);
+}
+
 img {
     display: block;
 }
