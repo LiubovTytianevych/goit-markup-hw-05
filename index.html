@@ -33,7 +33,7 @@
       <section class="baner-header section">
         <div class="baner-container container">
         <h1 class="baner-text">Ефективні рішення для вашого бізнесу</h1>
-        <button type="button" class="baner-button">Замовити послугу</button>
+        <button type="button" class="baner-button" data-modal-open>Замовити послугу</button>
       </div>
       </section>
       <section class="features section">
@@ -233,5 +233,12 @@
       </div>
     </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+<div class="modal">
+  <button class="modal-close-button" type="button" data-modal-close>X</button>
+</div>
+    </div>
+    <script src="./js/modal.js"></script>
+</body>
   </body>
 </html>
